@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Your Name Here
+ * @author The Promise Lan
  */
 public class EmployeeApp {
 
@@ -17,8 +17,7 @@ public class EmployeeApp {
 
     private void menuLoop() {
         int id;
-        String last, first, homePhone;
-        double salary;
+        String ipAddress, dateAdded, numRequest;
         String choice = "1";
         while (!choice.equals("0")) {
             System.out.println("\nEmployee App");
@@ -36,11 +35,10 @@ public class EmployeeApp {
                     break;
                 case "2":
                     id = Validator.getInt(sc, "New employee ID: ");
-                    last = Validator.getLine(sc, "Last name: ");
-                    first = Validator.getLine(sc, "First name: ");
-                    homePhone = Validator.getLine(sc, "Home phone number: ");
-                    salary = Validator.getDouble(sc, "Yearly salary: ");
-                    empList.createRecord(new Employee(id, last, first, homePhone, salary));
+                    ipAddress = Validator.getLine(sc, "IP Address: ");
+                    dateAdded = Validator.getLine(sc, "Date Added: ");
+                    numRequest = Validator.getLine(sc, "Number of Requests: ");
+                    empList.createRecord(new Employee(id, ipAddress, dateAdded, numRequest));
                     break;
                 case "3":
                     id = Validator.getInt(sc, "Employee id to retrieve: ");
@@ -48,16 +46,15 @@ public class EmployeeApp {
                     break;
                 case "4":
                     id = Validator.getInt(sc, "Employee ID to update: ");
-                    last = Validator.getLine(sc, "Last name: ");
-                    first = Validator.getLine(sc, "First name: ");
-                    homePhone = Validator.getLine(sc, "Home phone number: ");
-                    salary = Validator.getDouble(sc, "Yearly salary: ");
-                    empList.updateRecord(new Employee(id, last, first, homePhone, salary));
+                    ipAddress = Validator.getLine(sc, "IP Address: ");
+                    dateAdded = Validator.getLine(sc, "Date Added: ");
+                    numRequest = Validator.getLine(sc, "Number of Requests: ");
+                    empList.updateRecord(new Employee(id, ipAddress, dateAdded, numRequest));
                     break;
                 case "5":
                     id = Validator.getInt(sc, "Employee ID to delete: ");
                     System.out.println(empList.retrieveRecord(id));
-                    String ok = Validator.getLine(sc, "Deleter this record? (y/n) ", "^[yYnN]$");
+                    String ok = Validator.getLine(sc, "Delete this record? (y/n) ", "^[yYnN]$");
                     if (ok.equalsIgnoreCase("Y")) {
                         empList.deleteRecord(id);
                     }

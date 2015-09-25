@@ -2,38 +2,36 @@ package employeefile;
 
 /**
  *
- * @author Your Name Here
+ * @author The Promised Lan
  */
 public class Employee {
 
     private int empId;
-    private String lastName;
-    private String firstName;
-    private String homePhone;
-    private double salary;
+    private String ipAddress;
+    private String dateAdded;
+    private String numRequest;
 
     public Employee() {
         empId = 0;
-        lastName = "";
-        firstName = "";
-        homePhone = "";
-        salary = 0;
+        ipAddress = "";
+        dateAdded = "";
+        numRequest = "";
+       
     }
 
-    public Employee(int empId, String lastName, String firstName, String homePhone, double salary) {
+    public Employee(int empId, String ipAddress, String dateAdded, String numRequest) {
         this.empId = empId;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.homePhone = homePhone;
-        this.salary = salary;
+        this.ipAddress = ipAddress;
+        this.dateAdded = dateAdded;
+        this.numRequest = numRequest;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getIpAddress() {
+        return ipAddress;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
     }
 
     public int getEmpId() {
@@ -44,34 +42,27 @@ public class Employee {
         this.empId = empId;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getDateAdded() {
+        return dateAdded;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setDateAdded(String dateAdded) {
+        this.dateAdded = dateAdded;
     }
 
-    public String getHomePhone() {
-        return homePhone;
+    public String getNumRequest() {
+        return numRequest;
     }
 
-    public void setHomePhone(String homePhone) {
-        this.homePhone = homePhone;
+    public void setNumRequest(String numRequest) {
+        this.numRequest = numRequest;
     }
 
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
 
     @Override
     public String toString() {
-        return "Employee{" + "empId=" + empId + ", lastName=" + lastName 
-                + ", firstName=" + firstName + ", homePhone=" + homePhone 
-                + ", salary=" + salary + '}';
+        return "Employee{" + "empId=" + empId + ", ipAddress=" + ipAddress 
+                + ", dateAdded =" + dateAdded + ", numRequest=" + numRequest 
+                + '}';
     }
 }
